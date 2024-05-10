@@ -14,6 +14,7 @@ void Mob::_bind_methods() {
 void Mob::_ready() {
     get_node<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D")->connect("screen_exited", Callable(this, "on_visible_on_screen_notifier_2d_screen_exited"));
     AnimatedSprite2D *anim = get_node<AnimatedSprite2D>("AnimatedSprite2D");
+    anim->set_scale(Vector2(0.4, 0.4));
     PackedStringArray mob_types = anim->get_sprite_frames()->get_animation_names();
     RandomNumberGenerator rng;
     rng.randomize();

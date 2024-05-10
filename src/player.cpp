@@ -3,6 +3,7 @@
 #include <godot_cpp/classes/input.hpp>
 #include <godot_cpp/classes/animated_sprite2d.hpp>
 #include <godot_cpp/classes/collision_shape2d.hpp>
+#include <godot_cpp/classes/engine.hpp>
 
 using namespace godot;
 
@@ -26,6 +27,9 @@ void Player::_ready() {
 
 void Player::_process(double delta) {
     Vector2 velocity = Vector2(0.0, 0.0);
+
+    if (Engine::get_singleton()->is_editor_hint()) return; // Early return if we are in editor
+
     Input *input = Input::get_singleton();
     AnimatedSprite2D *anim = get_node<AnimatedSprite2D>("AnimatedSprite2D");
 

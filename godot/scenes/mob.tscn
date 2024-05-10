@@ -44,18 +44,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bw5yy"]
-radius = 46.0
-height = 130.0
+radius = 13.3333
+height = 46.6667
 
 [node name="Mob" type="Mob"]
+scale = Vector2(0.3, 0.3)
 collision_mask = 0
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_uk7tm")
-animation = &"swim"
-frame_progress = 0.634023
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
