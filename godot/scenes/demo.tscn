@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bri1qduj6mmw8"]
+
+[ext_resource type="Texture2D" uid="uid://caar2vqg6w57n" path="res://icon.svg" id="1_pwksv"]
+
+[node name="Demo" type="Demo"]
+amplitude = 200.0
+speed = 1.5
+position = Vector2(352.514, 226.906)
+texture = ExtResource("1_pwksv")
