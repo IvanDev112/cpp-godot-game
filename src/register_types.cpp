@@ -3,6 +3,7 @@
 #include "demo.hpp"
 #include "player.hpp"
 #include "mob.hpp"
+#include "main.hpp"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -18,6 +19,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	ClassDB::register_class<Demo>();
 	ClassDB::register_class<Player>();
 	ClassDB::register_class<Mob>();
+	ClassDB::register_class<Main>();
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
