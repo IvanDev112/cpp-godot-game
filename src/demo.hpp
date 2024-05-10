@@ -1,5 +1,5 @@
-#ifndef DEMO_H
-#define DEMO_H
+#ifndef DEMO_HPP
+#define DEMO_HPP
 #include <godot_cpp/classes/sprite2d.hpp>
 
 namespace godot {
@@ -27,4 +27,4 @@ public:
 
 }
 
-#endif // DEMO_H
+#endif // DEMO_HPP
