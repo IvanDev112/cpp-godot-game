@@ -47,7 +47,7 @@ animations = [{
 radius = 13.3333
 height = 46.6667
 
-[node name="Mob" type="Mob"]
+[node name="Mob" type="Mob" groups=["mobs"]]
 scale = Vector2(0.3, 0.3)
 collision_mask = 0
 gravity_scale = 0.0
@@ -57,6 +57,7 @@ metadata/_edit_group_ = true
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_uk7tm")
 animation = &"walk"
+frame_progress = 0.962498
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
