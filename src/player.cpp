@@ -19,6 +19,7 @@ void Player::start(const Vector2 &pos) {
 
 void Player::_ready() {
     connect("body_entered", Callable(this, "on_body_entered"));
+    get_node<AnimatedSprite2D>("AnimatedSprite2D")->set_scale(Vector2(0.5, 0.5));
     screen_size = get_viewport_rect().size;
     hide();
 }

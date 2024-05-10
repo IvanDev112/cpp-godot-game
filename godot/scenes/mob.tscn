@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvkyt54dud8dv"]
+
+[ext_resource type="Texture2D" uid="uid://bcgcv26ek44hi" path="res://assets/sprites/enemy/enemyFlyingAlt_1.png" id="1_q6lge"]
+[ext_resource type="Texture2D" uid="uid://bgh36kkuk2y6x" path="res://assets/sprites/enemy/enemyFlyingAlt_2.png" id="2_yje01"]
+[ext_resource type="Texture2D" uid="uid://dycbuperghrnd" path="res://assets/sprites/enemy/enemySwimming_1.png" id="3_2fgd7"]
+[ext_resource type="Texture2D" uid="uid://1e0rin36jvxa" path="res://assets/sprites/enemy/enemySwimming_2.png" id="4_8ba7a"]
+[ext_resource type="Texture2D" uid="uid://cjjr5qhupjfr3" path="res://assets/sprites/enemy/enemyWalking_1.png" id="5_gqrck"]
+[ext_resource type="Texture2D" uid="uid://c16lu1yl6w7ei" path="res://assets/sprites/enemy/enemyWalking_2.png" id="6_4mu04"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk7tm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q6lge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yje01")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2fgd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ba7a")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gqrck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4mu04")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bw5yy"]
+radius = 46.0
+height = 130.0
+
+[node name="Mob" type="Mob"]
+collision_mask = 0
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uk7tm")
+animation = &"swim"
+frame_progress = 0.634023
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bw5yy")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
