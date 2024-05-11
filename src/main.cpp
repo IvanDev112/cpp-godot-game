@@ -8,6 +8,7 @@
 #include <godot_cpp/classes/random_number_generator.hpp>
 #include <godot_cpp/classes/path_follow2d.hpp>
 #include <godot_cpp/classes/scene_tree.hpp>
+#include <godot_cpp/classes/audio_stream_player.hpp>
 
 using namespace godot;
 
@@ -35,10 +36,13 @@ void Main::game_over() {
     get_node<Timer>("ScoreTimer")->stop();
     get_node<Timer>("MobTimer")->stop();
     get_node<HUD>("Hud")->call("show_game_over");
+    get_node<AudioStreamPlayer>("Music")->stop();
+    get_node<AudioStreamPlayer>("DeathSound")->play();
 }
 
 void Main::new_game() {
     get_tree()->call_group("mobs", "queue_free");
+    get_node<AudioStreamPlayer>("Music")->play();
     score = 0;
     get_node<Player>("Player")->start(get_node<Marker2D>("StartPosition")->get_position());
     get_node<Timer>("StartTimer")->start();
